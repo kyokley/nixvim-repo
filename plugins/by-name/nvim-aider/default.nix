@@ -1,4 +1,7 @@
 {lib, ...}:
+let
+  inherit (lib.nixvim) defaultNullOpts;
+in
 lib.nixvim.plugins.mkNeovimPlugin {
   name = "nvim-aider";
   url = "https://github.com/GeorgesAlkhouri/nvim-aider";
@@ -6,6 +9,10 @@ lib.nixvim.plugins.mkNeovimPlugin {
   maintainers = with lib.maintainers; [
     kyokley
   ];
+
+  settingsOptions = {
+    aider_cmd = defaultNullOpts.mkStr "aider" "aider command to run";
+  };
 
   settingsExample = {
     # Command that executes Aider
