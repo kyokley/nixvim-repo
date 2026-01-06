@@ -133,6 +133,12 @@
     name = "Jalil David Salamé Messina";
     keys = [ { fingerprint = "7D6B 4D8F EBC5 7CBC 09AC  331F DA33 17E7 5BE9 485C"; } ];
   };
+  kyokley = {
+    email = "kyokley2@gmail.com";
+    github = "kyokley";
+    githubId = 11467843;
+    name = "Kevin Yokley";
+  };
   phinze = {
     email = "phinze@phinze.com";
     github = "phinze";
