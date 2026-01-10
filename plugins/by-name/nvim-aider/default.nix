@@ -1,20 +1,20 @@
 {lib, pkgs, ...}:
 let
   inherit (lib.nixvim) defaultNullOpts;
-  nvim-aider = pkgs.neovimUtils.buildNeovimPlugin {
-    pname = "nvim-aider";
-    src = pkgs.fetchFromGitHub {
-      owner = "GeorgesAlkhouri";
-      repo = "nvim-aider";
-      rev = "main";
-      hash = "";
-    };
-  };
+  # nvim-aider = pkgs.neovimUtils.buildNeovimPlugin {
+  #   pname = "nvim-aider";
+  #   src = pkgs.fetchFromGitHub {
+  #     owner = "GeorgesAlkhouri";
+  #     repo = "nvim-aider";
+  #     rev = "main";
+  #     hash = "";
+  #   };
+  # };
 in
 lib.nixvim.plugins.mkNeovimPlugin {
   name = "nvim-aider";
   url = "https://github.com/GeorgesAlkhouri/nvim-aider";
-  package = nvim-aider;
+  package = pkgs.vimExtraPlugins.nvim-aider;
 
   maintainers = with lib.maintainers; [
     kyokley
